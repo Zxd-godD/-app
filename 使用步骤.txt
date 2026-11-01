@@ -1,0 +1,32 @@
+表白 app 使用步骤
+
+一、启动本地网页
+
+1. 在文件夹 C:\Users\zxd\Desktop\表白 内打开 PowerShell。
+2. 输入以下两行命令：
+
+Set-Location -LiteralPath "C:\Users\zxd\Desktop\表白"
+python server.py
+
+3. 当窗口显示“表白 app 已启动”后，保持这个 PowerShell 窗口开启，不要关闭。
+4. 在电脑浏览器打开：http://localhost:8000
+   确认网页能正常显示。
+
+二、生成可给外地访问的临时链接
+
+1. 另开一个 PowerShell 窗口。
+2. 输入以下命令：
+
+& "C:\Program Files (x86)\cloudflared\cloudflared.exe" tunnel --url http://localhost:8000
+
+3. 窗口会显示一个以 https:// 开头、以 trycloudflare.com 结尾的链接。
+4. 把这个链接发给对方，她即可用手机或电脑浏览器打开。
+
+注意事项
+
+- 使用期间，电脑必须开机并联网。
+- 两个 PowerShell 窗口都必须保持开启。
+- 关闭第二个窗口后，临时链接立即失效。
+- 下次重新运行第二步时，会生成一个新的链接。
+- 网页每次打开或刷新都会从第一题开始。
+- 完成后的答案保存在本文件夹的 data\responses.json；联网时会自动发送邮件。

@@ -1,0 +1,29 @@
+:root { --ink:#4b293a; --rose:#d65c84; --pale:#fff7f9; --line:#f0cad7; }
+* { box-sizing:border-box; }
+body { margin:0; min-height:100vh; display:grid; place-items:center; color:var(--ink); background:radial-gradient(circle at top left,#ffe3ec,transparent 35%),radial-gradient(circle at bottom right,#f7dce8,transparent 38%),#fffafb; font-family:"Microsoft YaHei",system-ui,sans-serif; }
+.app-shell { width:min(92vw,620px); padding:34px 0; text-align:center; }
+.hearts { color:#e5799c; font-size:24px; letter-spacing:8px; margin-bottom:12px; }
+.eyebrow,.hint { color:#a77789; font-size:14px; letter-spacing:.08em; }
+.card { background:rgba(255,255,255,.9); border:1px solid rgba(255,255,255,.8); border-radius:28px; box-shadow:0 20px 60px rgba(123,55,80,.13); padding:42px clamp(24px,6vw,56px); }
+h1 { margin:10px 0 28px; font-size:clamp(25px,5vw,34px); font-weight:700; }
+input[type=text] { width:100%; border:2px solid var(--line); border-radius:14px; padding:16px; color:var(--ink); font-size:17px; outline:none; background:#fff; }
+input[type=text]:focus { border-color:#df8daa; box-shadow:0 0 0 4px #ffe4ed; }
+button { width:100%; margin-top:14px; border:0; border-radius:14px; padding:15px 18px; background:linear-gradient(135deg,#df7799,#c84975); box-shadow:0 8px 18px #e7a2b8; color:white; cursor:pointer; font:600 16px "Microsoft YaHei",sans-serif; transition:transform .16s,filter .16s; }
+button:hover { filter:brightness(1.04); transform:translateY(-1px); }
+.error { min-height:22px; color:#c04c69; font-size:14px; margin:12px 0 0; }
+.hidden { display:none; }
+.score { color:#d4517c; font-size:62px; font-weight:700; margin:10px 0 16px; }
+.score small { font-size:25px; }
+.range { width:100%; accent-color:#d65c84; }
+.range-labels { display:flex; justify-content:space-between; color:#a77789; font-size:13px; }
+.choices { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+.choice { aspect-ratio:1; margin:0; padding:12px; border:2px solid transparent; background:#fff4f7; box-shadow:none; color:var(--ink); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+.choice img { width:62%; height:62%; object-fit:contain; }
+.choice.selected { border-color:#d65c84; background:#ffe6ee; }
+.choice span { font-size:16px; }
+.complete { padding:54px 24px; }
+.complete p { color:#a77789; }
+.big-heart { color:#d85d83; font-size:74px; line-height:1; animation:pulse 1.6s infinite; }
+@keyframes pulse { 50% { transform:scale(1.12); } }
+@media (max-width:420px) { .card { padding:30px 20px; border-radius:22px; } .choices { gap:9px; } }
+

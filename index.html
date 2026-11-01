@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>给你的问题</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <div class="hearts" aria-hidden="true">♡　♥　♡</div>
+    <p class="eyebrow" id="progress">第 1 / 9 步</p>
+    <section class="card" id="questionView">
+      <p class="hint" id="questionHint">认真回答每一个问题吧</p>
+      <h1 id="questionTitle"></h1>
+      <input id="answerInput" type="text" autocomplete="off" placeholder="输入你的答案">
+      <p class="error" id="answerError" aria-live="polite"></p>
+      <button id="nextButton" type="button">确认并继续</button>
+    </section>
+
+    <section class="card hidden" id="affectionView">
+      <p class="hint">请诚实一点哦</p>
+      <h1>你对我的好感度是？</h1>
+      <div class="score"><span id="scoreNumber">0</span><small>%</small></div>
+      <input class="range" id="affectionRange" type="range" min="0" max="100" value="0">
+      <p class="range-labels"><span>有一点点</span><span>超级喜欢</span></p>
+      <p class="error" id="affectionError" aria-live="polite"></p>
+      <button id="affectionButton" type="button">确认并继续</button>
+    </section>
+
+    <section class="card hidden" id="choiceView">
+      <h1>下面四个，你最喜欢哪个？</h1>
+      <div class="choices" id="choices">
+        <button class="choice" data-choice="香水" type="button"><img src="images/perfume.jpg" alt="香水"><span>香水</span></button>
+        <button class="choice" data-choice="键盘" type="button"><img src="images/keyboard.jpg" alt="键盘"><span>键盘</span></button>
+        <button class="choice" data-choice="耳机" type="button"><img src="images/headphones.jpg" alt="耳机"><span>耳机</span></button>
+        <button class="choice" data-choice="口红" type="button"><img src="images/lipstick.jpg" alt="口红"><span>口红</span></button>
+      </div>
+      <p class="error" id="choiceError" aria-live="polite"></p>
+      <button id="choiceButton" type="button">确认选择</button>
+    </section>
+
+    <section class="card hidden complete" id="completeView">
+      <div class="big-heart">♥</div>
+      <h1>谢谢使用</h1>
+      <p>你的回答已经收到。</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
